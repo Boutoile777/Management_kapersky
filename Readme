@@ -32,3 +32,90 @@
 │  Bouton Ajouter Abonnement -> ouvre AjouterAbonnement.jsx      │
 │  Possibilité Edit/Delete par ligne                             │
 └───────────────────────────────────────────────────────────────┘
+
+
+#############################################################################
+##                                                                         ##
+##                     Comment faire démarrer le projet                    ##
+##                                                                         ##
+#############################################################################
+
+1. Cloner le dépôt GitHub :
+
+   git clone https://github.com/Boutoile777/Management_kapersky.git
+
+2. Vérifie que Node.js et npm sont installés
+    a. Vérifier Node.js :
+        node -v
+    b. Vérifier npm :
+        npm -v
+    c. Vérifier Python (version 3.7 ou supérieure) :
+        python --version  (ou python3 --version selon votre système)
+    d. Vérifier pip (gestionnaire de paquets Python) :
+        pip --version  (ou pip3 --version selon votre système)
+    
+    Si l'une de ces commandes ne fonctionne pas, vous devrez installer le logiciel correspondant avant de continuer.
+
+3.Créer un environnement virtuel Python et l'activer :
+    a- Sous Windows :
+       python -m venv env
+       .\env\Scripts\activate
+    b- Sous macOS/Linux :
+       python3 -m venv env
+       source env/bin/activate
+
+4. Installer les dépendances requises :
+    a-Pour le backend (Flask) :
+        1. Naviguer dans le répertoire du projet :
+           cd Management_kapersky/backend
+        2. Installer les dépendances :
+           pip install -r requirements.txt
+    
+    b-Pour le frontend (React) :
+        1. Naviguer dans le répertoire du projet :
+           cd Management_kapersky/frontend_main
+        2. Installer les dépendances :
+           npm install
+
+5. Configurer la base de données PostgreSQL :
+    Dans ce cas, vous devez avoir PostgreSQL installé et avoir accès à la base de données grâce aux fichiers config.ini
+    Si vous voulez personnaliser et avoir votre propre base de données, vous devez modifier le fichier config.ini dans le dossier backend pour refléter vos paramètres PostgreSQL.
+    "Exemple de config.ini :
+    [postgresql]
+    host=localhost
+    database=nom_de_votre_base_de_donnees
+    user=nom_utilisateur
+    password=mot_de_passe"
+
+6. Démarrer le backend Flask :
+    a. Naviguer dans le répertoire backend si ce n'est pas déjà fait :
+       cd Management_kapersky/backend
+    b. Démarrer le serveur Flask :
+       Sous Windows :
+        Il vous suffit de lancer app.py directement avec Python :
+         python app.py
+
+    Sous macOS/Linux :
+        export FLASK_APP=app.py
+        export FLASK_ENV=development  # Optionnel, pour le mode développement
+        flask run
+    Le backend devrait maintenant être accessible et vous devriez voir des messages dans le terminal comme ceci:
+
+         Application Flask lancée avec succès !
+        🔑 JWT actif | 📦 Base PostgreSQL connectée
+        INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+        INFO:apscheduler.scheduler:Added job "scheduled_job" to job store "default"
+        INFO:apscheduler.scheduler:Scheduler started
+        ⏰ Scheduler démarré, envoi des notifications programmé à 9h chaque jour.
+        * Serving Flask app 'app'
+        * Debug mode: on
+        INFO:werkzeug:WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+        * Running on http://127.0.0.1:5000
+        INFO:werkzeug:Press CTRL+C to quit
+
+7. Démarrer le frontend React :
+    a. Ouvrir un nouveau terminal et naviguer dans le répertoire frontend_main :
+       cd Management_kapersky/frontend_main
+    b. Démarrer le serveur de développement React :
+       npm start
+    Le frontend devrait maintenant être accessible dans votre navigateur à l'adresse http://localhost:3000.
