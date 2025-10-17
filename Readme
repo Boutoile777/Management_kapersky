@@ -56,13 +56,13 @@
     
     Si l'une de ces commandes ne fonctionne pas, vous devrez installer le logiciel correspondant avant de continuer.
 
-3.Créer un environnement virtuel Python et l'activer :
+3.Créer un environnement virtuel Python :
     a- Sous Windows :
        python -m venv env
-       .\env\Scripts\activate
+       
     b- Sous macOS/Linux :
        python3 -m venv env
-       source env/bin/activate
+       
 
 4. Installer les dépendances requises :
     a-Pour le backend (Flask) :
@@ -88,9 +88,17 @@
     password=mot_de_passe"
 
 6. Démarrer le backend Flask :
-    a. Naviguer dans le répertoire backend si ce n'est pas déjà fait :
+    a. Activer l'environnement virtuel :
+       Sous Windows :
+        .\env\Scripts\activate
+
+       Sous macOS/Linux :
+        source env/bin/activate
+
+    b. Naviguer dans le répertoire backend si ce n'est pas déjà fait :
        cd Management_kapersky/backend
-    b. Démarrer le serveur Flask :
+       
+    c. Démarrer le serveur Flask :
        Sous Windows :
         Il vous suffit de lancer app.py directement avec Python :
          python app.py
