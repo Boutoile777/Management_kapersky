@@ -1,0 +1,34 @@
+┌───────────────────────────────────────────────────────────────┐
+│ Navbar (haut)                                                   │
+│ ┌──────────────┐  Logo  │  Titre App  │  Utilisateur / Logout │
+└───────────────────────────────────────────────────────────────┘
+┌──────────────┐───────────────────────────────────────────────┐
+│ Sidebar (gauche)                                               │
+│ ┌─────────────┐                                               │
+│ │ Dashboard   │  <- lien                                        │
+│ │ Abonnements │  <- lien                                        │
+│ │ Paramètres  │  <- lien (optionnel)                             │
+│ └─────────────┘                                               │
+│                                                                 │
+│                                                                 │
+└──────────────┘───────────────────────────────────────────────┐
+│ Page principale (droite)                                      │
+│                                                               │
+│  Dashboard.jsx :                                               │
+│  ┌───────────────────────────────┐  ┌───────────────────────┐ │
+│  │ CardStat: Abonnements Actifs │  │ CardStat: Expirés      │ │
+│  └───────────────────────────────┘  └───────────────────────┘ │
+│  ┌───────────────────────────────┐  ┌───────────────────────┐ │
+│  │ CardStat: Abonnements à 30j  │  │ CardStat: Nouveaux     │ │
+│  └───────────────────────────────┘  └───────────────────────┘ │
+│                                                               │
+│  Graphiques / Stats supplémentaires                             │
+│                                                               │
+│  Abonnements.jsx :                                            │
+│  ┌──────────────────────────────────────────────────────────┐ │
+│  │ Tableau : Liste des abonnements                           │ │
+│  │ Colonnes : Nom, Direction, Poste, Date Expiration, Etat   │ │
+│  └──────────────────────────────────────────────────────────┘ │
+│  Bouton Ajouter Abonnement -> ouvre AjouterAbonnement.jsx      │
+│  Possibilité Edit/Delete par ligne                             │
+└───────────────────────────────────────────────────────────────┘
